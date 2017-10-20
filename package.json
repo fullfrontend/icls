@@ -1,0 +1,20 @@
+{
+  "name": "icls",
+  "version": "0.0.1",
+  "description": "Convert ICLS theme file to prism.css",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "icls": "index.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
+}
