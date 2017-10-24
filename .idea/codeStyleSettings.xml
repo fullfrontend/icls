@@ -9,6 +9,7 @@
           <option name="USE_DOUBLE_QUOTES" value="false" />
           <option name="FORCE_QUOTE_STYlE" value="true" />
           <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+          <option name="OBJECT_LITERAL_WRAP" value="2" />
         </JSCodeStyleSettings>
         <PHPCodeStyleSettings>
           <option name="ALIGN_KEY_VALUE_PAIRS" value="true" />
