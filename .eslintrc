@@ -60,10 +60,6 @@
         "no-with": "error",
         "object-curly-newline": "error",
         "object-curly-spacing": "error",
-        "padded-blocks": [
-            "error",
-            "never"
-        ],
         "quote-props": [
             "error",
             "as-needed"
