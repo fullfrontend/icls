@@ -1,0 +1,22 @@
+checks:
+    javascript:
+        code_rating: true
+        duplicate_code: true
+        no_var: true
+        no_param_assign: true
+        no_loop_var_assign: true
+        no_implicit_undefined_return: true
+        no_else_return: true
+        no_alert: true
+        eqeqeq: true
+
+tools:
+    eslint:
+        use_native_config: true
+build:
+    environment:
+        node: '8.7.0'
+
+filter:
+    excluded_paths:
+        - tests/*
