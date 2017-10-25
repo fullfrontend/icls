@@ -1,28 +1,35 @@
 {
-  "name": "icls",
-  "version": "0.0.1",
-  "description": "Convert ICLS theme file to prism.css",
-  "main": "index.js",
-  "license": "MIT",
-  "bin": {
-    "icls": "index.js"
-  },
-  "dependencies": {
-    "colors": "^1.1.2",
-    "commander": "^2.11.0",
-    "immutable": "^3.8.2",
-    "postcss": "^6.0.13",
-    "postcss-conditionals": "^2.1.0",
-    "postcss-simple-vars": "^4.1.0",
-    "xml-js": "^1.5.1"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.9.0",
-    "mocha": "^4.0.1"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "author": ""
+    "name": "icls",
+    "version": "0.0.1",
+    "description": "Convert ICLS theme file to prism.css",
+    "author": "Cedric Michaux",
+    "main": "index.js",
+    "license": "MIT",
+    "bin": {
+        "icls": "index.js"
+    },
+    "scripts": {
+        "test": "mocha",
+        "coverage": "istanbul cover _mocha",
+        "lint": "eslint src test",
+        "lint:fix": "eslint --fix src test"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "dependencies": {
+        "colors": "^1.1.2",
+        "commander": "^2.11.0",
+        "immutable": "^3.8.2",
+        "postcss": "^6.0.13",
+        "postcss-conditionals": "^2.1.0",
+        "postcss-simple-vars": "^4.1.0",
+        "xml-js": "^1.5.1"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "eslint": "^4.9.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.1"
+    }
 }
