@@ -6,6 +6,8 @@
         <option name="LINE_SEPARATOR" value="&#10;" />
         <option name="HTML_DO_NOT_INDENT_CHILDREN_OF" value="" />
         <JSCodeStyleSettings>
+          <option name="FORCE_SEMICOLON_STYLE" value="true" />
+          <option name="SPACE_BEFORE_CLASS_LBRACE" value="false" />
           <option name="USE_DOUBLE_QUOTES" value="false" />
           <option name="FORCE_QUOTE_STYlE" value="true" />
           <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
@@ -39,6 +41,19 @@
         </codeStyleSettings>
         <codeStyleSettings language="JavaScript">
           <option name="RIGHT_MARGIN" value="130" />
+          <option name="ELSE_ON_NEW_LINE" value="true" />
+          <option name="SPACE_BEFORE_METHOD_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_IF_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_ELSE_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_WHILE_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_FOR_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_DO_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_SWITCH_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_TRY_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_CATCH_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_FINALLY_LBRACE" value="false" />
+          <option name="METHOD_CALL_CHAIN_WRAP" value="2" />
+          <option name="ARRAY_INITIALIZER_WRAP" value="2" />
           <option name="IF_BRACE_FORCE" value="3" />
           <option name="DOWHILE_BRACE_FORCE" value="3" />
           <option name="WHILE_BRACE_FORCE" value="3" />
