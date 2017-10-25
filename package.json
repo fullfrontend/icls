@@ -10,7 +10,8 @@
     },
     "scripts": {
         "test": "mocha",
-        "coverage": "istanbul cover _mocha",
+        "test:coverage": "istanbul cover _mocha",
+        "test:coverage:clover": "istanbul cover --report clover _mocha",
         "lint": "eslint src test",
         "lint:fix": "eslint --fix src test"
     },
