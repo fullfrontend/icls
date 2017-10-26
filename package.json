@@ -3,36 +3,39 @@
     "version": "0.0.1",
     "description": "Convert ICLS theme file to prism.css",
     "author": "Cedric Michaux",
-    "main": "index.js",
+    "main": "bin/icls",
     "license": "MIT",
     "bin": {
-        "icls": "index.js"
+        "icls": "bin/icls"
     },
     "scripts": {
-        "test": "mocha",
-        "test:coverage": "istanbul cover _mocha",
-        "test:travis": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-        "test:scrutinizer": "istanbul cover --report clover _mocha ",
+        "prebuild": "npm run lint",
+        "build": "mkdir -p es5/bin && npm run transpile",
         "lint": "eslint src test",
-        "lint:fix": "eslint --fix src test"
+        "lint:fix": "eslint --fix src test",
+        "prepublish": "npm run build",
+        "test": "mocha",
+        "test:coverage": "nyc mocha",
+        "test:scrutinizer": "nyc --reporter=clover _mocha ",
+        "test:travis": "nyc --reporter=text-lcov _mocha | coveralls",
+        "transpile": "babel src --out-dir es5 --source-maps",
+        "watch": "babel src --out-dir es5 --source-maps --watch"
     },
     "directories": {
         "test": "test"
     },
     "dependencies": {
-        "colors": "^1.1.2",
         "commander": "^2.11.0",
-        "immutable": "^3.8.2",
-        "postcss": "^6.0.13",
-        "postcss-conditionals": "^2.1.0",
-        "postcss-simple-vars": "^4.1.0",
-        "xml-js": "^1.5.1"
+        "is-iojs": "^1.1.0"
     },
     "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
         "chai": "^4.1.2",
         "coveralls": "^3.0.0",
         "eslint": "^4.9.0",
-        "istanbul": "^0.4.5",
-        "mocha": "^4.0.1"
+        "mocha": "^4.0.1",
+        "nyc": "^11.2.1"
     }
 }

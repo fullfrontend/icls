@@ -1,2 +1,5 @@
 node_modules
 coverage
+es5
+.nyc_output
+yarn-error.log

@@ -4,8 +4,11 @@
         "es6": true,
         "mocha": true
     },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
     "extends": "eslint:recommended",
-    "globals": {},
     "rules": {
         "array-bracket-spacing": [
             2,
@@ -15,6 +18,9 @@
             2,
             "always"
         ],
+        "arrow-parens": 2,
+        "arrow-body-style": 2,
+        "arrow-spacing": 2,
         "brace-style": [
             2,
             "stroustrup"
@@ -78,7 +84,7 @@
         "space-before-function-paren": 2,
         "space-before-blocks": [
             2,
-            "never"
+            "always"
         ],
         "space-infix-ops": 2,
         "space-unary-ops": [

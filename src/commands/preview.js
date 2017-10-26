@@ -1,8 +1,5 @@
-'use strict';
-
-module.exports = function (){
-    //Console.log('file', file);
-    //Console.log('options', options);
-
+const preview = () => {
     throw new Error('To implement');
 };
+
+export default preview;
