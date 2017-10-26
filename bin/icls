@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+'use strict';
+
+require(require('is-iojs') ? '../src/bin/icls.js' : '../es5/bin/icls.js');
