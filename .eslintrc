@@ -61,7 +61,6 @@
                 "beforeBlockComment": true
             }
         ],
-        "newline-per-chained-call": 2,
         "no-empty": 2,
         "no-empty-function": 2,
         "no-else-return": 2,
