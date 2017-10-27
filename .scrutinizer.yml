@@ -2,13 +2,16 @@ checks:
     javascript:
         code_rating: true
         duplicate_code: true
+filter:
+    excluded_paths:
+        - 'test/'
 
 build:
     environment:
         node: '8.7.0'
     dependencies:
         after:
-          - 'npm install -g eslint'
+            - 'npm install -g eslint'
     tests:
         override:
             - eslint-run src test
