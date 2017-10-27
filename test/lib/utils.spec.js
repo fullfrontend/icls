@@ -3,7 +3,7 @@ import {expect} from 'chai';
 import {autoCast, castString, isColor, isFloat, isInt} from '../../src/lib/utils';
 
 
-describe('autoCast  utility', () => {
+describe('autoCast utility', () => {
     it('should cast to an integer', () => {
         expect(autoCast('42')).to.equal(42);
     });
@@ -27,7 +27,7 @@ describe('autoCast  utility', () => {
 });
 
 
-describe('castString  utility', () => {
+describe('castString utility', () => {
     it('should return a lowercase string', () => {
         expect(castString('FOO')).to.equal('foo');
         expect(castString('foo')).to.equal('foo');
@@ -42,20 +42,18 @@ describe('castString  utility', () => {
     });
 });
 
-describe('isInt  utility', () => {
+describe('isInt utility', () => {
     it('should work as expected', () => {
         expect(isInt('187')).to.be.true;
         expect(isInt(187)).to.be.true;
         expect(isInt('-2')).to.be.true;
         expect(isInt(-'1')).to.be.true;
-        expect(isInt('10e1')).to.be.true;
-        expect(isInt(10e1)).to.be.true;
         expect(isInt('1.2')).to.be.false;
         expect(isInt('foo')).to.be.false;
     });
 });
 
-describe('isFloat  utility', () => {
+describe('isFloat utility', () => {
     it('should work as expected', () => {
         expect(isFloat('0.2')).to.be.true;
         expect(isFloat(0.2)).to.be.true;
@@ -70,7 +68,7 @@ describe('isFloat  utility', () => {
     });
 });
 
-describe('isColor  utility', () => {
+describe('isColor utility', () => {
     it('should work as expected', () => {
         expect(isColor('#ffffff')).to.be.true;
         expect(isColor('ffffff')).to.be.true;

@@ -1,12 +1,12 @@
 export const isInt = (val) => !isNaN(val)
-    && eval(val)
-        .toString().length
-    === parseInt(eval(val))
-        .toString().length;
+    && (
+        Number.isInteger(val)
+        || (typeof val === 'string' && '' + parseInt(val, 10) === val)
+    );
 
 
 export const isFloat = (val) => !isNaN(val)
-    && !isInt(eval(val))
+    && !isInt(val)
     && val.toString().length > 0;
 
 export const isColor = (val) => /^#?[0-9A-F]{6}$/i.test(val);
