@@ -1,7 +1,29 @@
 import {expect} from 'chai';
-import store from '../../src/model/store';
+import Store from '../../src/model/store';
 
-describe('store reset', () => {
+describe('Store.constructor', () => {
+    it('should return an instance of Store', () => {
+        let store = new Store();
+        expect(store).to.be.instanceOf(Store);
+    });
+
+    it('should populate the store with the given object', () => {
+        let store = new Store({
+            foo: 'bar',
+            baz: 42
+        });
+
+        expect(store._store).to.have.property('foo', 'bar');
+        expect(store._store).to.have.property('baz', 42);
+    });
+});
+
+describe('Store.reset', () => {
+    let store;
+    beforeEach(() => {
+        store = new Store();
+    });
+
     it('should empty the store', () => {
         store._store = {
             'foo': 'bar'
@@ -11,9 +33,10 @@ describe('store reset', () => {
     });
 });
 
-describe('store set', () => {
+describe('Store.set', () => {
+    let store;
     beforeEach(() => {
-        store.reset();
+        store = new Store();
     });
 
     it('should be able to set a key/value', () => {
@@ -45,12 +68,10 @@ describe('store set', () => {
     });
 });
 
-
-describe('store get', () => {
-
+describe('Store.get', () => {
+    let store;
     beforeEach(() => {
-        store.reset();
-        store._store = {
+        store = new Store({
             'foo': {
                 'bar': {
                     'baz': 42
@@ -58,7 +79,7 @@ describe('store get', () => {
             },
             'foobar': 'raboof',
             'foobaz': 'zaboof'
-        };
+        });
     });
 
 
@@ -84,4 +105,30 @@ describe('store get', () => {
     it('should return the default value if the key is undefined', () => {
         expect(store.get('unknown', 42)).to.equal(42);
     });
+});
+
+describe('Store.toJS', () => {
+    let store;
+    beforeEach(() => {
+        store = new Store({
+            'foo': {
+                'bar': {
+                    'baz': 42
+                }
+            },
+            'foobar': 'raboof',
+            'foobaz': 'zaboof'
+        });
+    });
+
+   it('should return the store', () => {
+       let value = store.toJS();
+
+       expect(value).to.have.property('foo');
+       expect(value.foo).to.have.property('bar');
+       expect(value.foo.bar).to.have.property('baz', 42);
+       expect(value).to.have.property('foobar', 'raboof');
+       expect(value).to.have.property('foobaz', 'zaboof');
+   });
+
 });

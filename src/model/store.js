@@ -1,7 +1,7 @@
-class InMemoryStore {
+export default class InMemoryStore {
 
-    constructor () {
-        this._store = {};
+    constructor (initialStore = {}) {
+        this._store = initialStore;
     }
 
     _recurse (key, value) {
@@ -52,6 +52,8 @@ class InMemoryStore {
         this._store = {};
     }
 
-}
+    toJS () {
+        return this._store;
+    }
 
-export default new InMemoryStore();
+}
