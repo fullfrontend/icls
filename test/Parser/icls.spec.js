@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import Parser from '../../src/lib/icls-parser';
+import Parser from '../../src/Parser/Icls';
 import * as samples from '../samples/icls-strings';
 
 describe('Parser.parse', () => {

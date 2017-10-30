@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import Store from '../../src/model/store';
+import Store from '../../src/Model/Store';
 
 describe('Store.constructor', () => {
     it('should return an instance of Store', () => {
