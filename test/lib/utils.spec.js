@@ -1,5 +1,4 @@
 import {expect} from 'chai';
-
 import {autoCast, castString, isColor, isFloat, isInt} from '../../src/lib/utils';
 
 
@@ -25,7 +24,6 @@ describe('autoCast utility', () => {
         expect(autoCast('foo')).to.equal('foo');
     });
 });
-
 
 describe('castString utility', () => {
     it('should return a lowercase string', () => {

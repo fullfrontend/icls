@@ -1,10 +1,10 @@
 import xmljs from 'xml-js';
-import Store from '../model/store';
+import Store from '../Model/Store';
 
-import {autoCast, castString} from './utils';
+import {autoCast, castString} from '../lib/utils';
 
 
-export default class Parser {
+export default class IclsParser {
     constructor () {
         this._store = new Store();
     }

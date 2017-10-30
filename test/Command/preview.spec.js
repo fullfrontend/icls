@@ -1,9 +1,9 @@
 import {expect} from 'chai';
-import convert from '../../src/commands/convert';
+import preview from '../../src/Command/preview';
 
-describe('command convert', () => {
+describe('command preview', () => {
     it('should throw an error', () => {
-        expect(convert)
+        expect(preview)
             .to
             .throw('To implement');
     });
