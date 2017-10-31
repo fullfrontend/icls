@@ -1,7 +1,9 @@
 import xmljs from 'xml-js';
 import Store from '../Model/Store';
-
+import debugRenderer from 'debug';
 import {autoCast, castString} from '../lib/utils';
+
+let debug = debugRenderer('icls:parser:icls');
 
 
 export default class IclsParser {
@@ -45,6 +47,7 @@ export default class IclsParser {
         if (el.name !== 'scheme' || el.attributes === undefined) {
             return;
         }
+        debug('Parse Scheme node');
 
         this._setInStore(el.attributes, ancestors);
     }
@@ -53,6 +56,8 @@ export default class IclsParser {
         if (el.name !== 'option' || el.attributes === undefined) {
             return;
         }
+
+        debug('Parse Option %s node', el.attributes.name);
 
         if (el.attributes.value === undefined && el.elements !== undefined) {
             this._readTree(el.elements, [
@@ -71,6 +76,8 @@ export default class IclsParser {
             return;
         }
 
+        debug('Parse Colors node');
+
         this._readTree(
             el.elements,
             [
@@ -84,11 +91,17 @@ export default class IclsParser {
         if (el.name !== 'attributes' || el.elements === undefined) {
             return;
         }
+        debug('Parse Attributes node');
 
         this._readTree(el.elements, ancestors);
     }
 
     _parseChildNodes (el, ancestors) {
+        debug('Parsing childnodes of %s', el.name);
+        if (ancestors.length) {
+            debug('Ancestors: %o', ancestors);
+        }
+
         if (el.elements === undefined) {
             return;
         }
@@ -101,8 +114,10 @@ export default class IclsParser {
     }
 
     parse (iclsXmlString) {
+        debug('Parsing started');
         const iclsJsObj = this._convertToUnderstandable(iclsXmlString);
         this._buildTree(iclsJsObj);
+        debug('Parsing Finished');
         return this.getStore();
     }
 

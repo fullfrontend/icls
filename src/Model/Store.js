@@ -1,3 +1,6 @@
+import debugRenderer from 'debug';
+let debug = debugRenderer('icls:store:inmemory');
+
 export default class InMemoryStore {
 
     constructor (initialStore = {}) {
@@ -5,7 +8,6 @@ export default class InMemoryStore {
     }
 
     _recurse (key, value) {
-
         if (key === undefined) {
             return this._store;
         }
@@ -40,15 +42,18 @@ export default class InMemoryStore {
     }
 
     get (key, defaultValue = null) {
+        debug('Get key %s with default value %s', key, defaultValue);
         return this._recurse(key) || defaultValue;
     }
 
     set (key, value) {
+        debug('Set key %s with value %s', key, value);
         this._recurse(key, value);
         return this;
     }
 
     reset () {
+        debug('Reset store');
         this._store = {};
     }
 
